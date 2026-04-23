@@ -243,17 +243,6 @@ export class EnrollmentListComponent implements OnInit {
           if (this.selectedItem?.id) this.revoke(this.selectedItem.id);
         },
       },
-      {
-        id: IdButtonActionEnum.PAYMENT,
-        label: 'Generar Cobro',
-        icon: IconButtonActionEnum.PAYMENT,
-        command: () => {
-          console.log(this.selectedItem.student.id);
-          window.open(`https://servicios.uaw.edu.ec/orden-secretaria?cedula=1207151562&schoolPeriodId=${this.schoolPeriodsService.openSchoolPeriod.id}&studentId=${this.selectedItem.student.id}&name=${this.selectedItem.student.user.name}&lastname=${this.selectedItem.student.user.lastname}&token=${this.authService.token?.replaceAll('"','')}
-          `,
-            '_blank');
-        },
-      },
     ];
   }
 

@@ -46,7 +46,7 @@ export enum InformationStudentEnum {
   isPrivateSecurity = '¿Cuenta con seguridad privada?',
   isSewerageService = '¿Posee servicio básico de alcantarillado?',
   isSocialSecurity = '¿Tiene seguro social?',
-  isStudyOtherCareer = '¿Estudia otra carrera fuera de la Amawtay Wasi?',
+  isStudyOtherCareer = '¿Estudia otra carrera fuera del Yavirac?',
   isSubjectLost = '¿Ha perdido asignaturas?',
   isWaterService = '¿Posee el servicio básico de agua?',
   isWork = '¿El estudiante trabaja?',
