@@ -96,9 +96,9 @@ export class GradeListComponent implements OnInit {
       {field: 'grade1', header: 'Parcial 1'},
       {field: 'grade2', header: 'Parcial 2'},
       // {field: 'grade3', header: 'Evaluación Final'},
-      {field: 'supplementaryGrade', header: 'Evaluación de Recuperación'},
+      // {field: 'supplementaryGrade', header: 'Evaluación de Recuperación'},
       {field: 'finalGrade', header: 'Calificación final'},
-      {field: 'finalAttendance', header: 'Progreso'},
+      {field: 'finalAttendance', header: 'Asistencia'},
       {field: 'academicState', header: 'Estado'},
     ];
   }

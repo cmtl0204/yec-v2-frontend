@@ -174,7 +174,7 @@ export class InscriptionListComponent implements OnInit {
       {field: 'name', header: 'Nombres'},
       {field: 'type', header: 'Tipo de Matrícula'},
       {field: 'academicPeriod', header: 'Periodo académico'},
-      {field: 'workday', header: 'Jornada'},
+      {field: 'workday', header: 'Horario'},
       {field: 'parallel', header: 'Paralelo'},
       {field: 'enrollmentState', header: 'Estado'}
     ];

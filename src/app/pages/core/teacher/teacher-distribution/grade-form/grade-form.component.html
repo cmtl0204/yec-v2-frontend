@@ -25,7 +25,7 @@
                      mode="decimal"
                      [showButtons]="true"
                      [min]="0"
-                     [max]="10"
+                     [max]="5"
                      [minFractionDigits]="2"
                      [maxFractionDigits]="2"></p-inputNumber>
       <small appErrorMessage
@@ -42,7 +42,7 @@
                      mode="decimal"
                      [showButtons]="true"
                      [min]="0"
-                     [max]="10"
+                     [max]="5"
                      [minFractionDigits]="2"
                      [maxFractionDigits]="2"></p-inputNumber>
       <small appErrorMessage
@@ -70,13 +70,14 @@
 <!--    </div>-->
 
     <div class="field xl:col-6 lg:col-6 md:col-6 sm:col-12">
-      <label appLabel for="attendance" [label]="'Progreso:'" [required]="attendanceField"></label>
+      <label appLabel for="attendance" [label]="'Asistencia:'" [required]="attendanceField"></label>
       <p-inputNumber id="attendance"
                      formControlName="attendance"
                      mode="decimal"
                      [showButtons]="true"
                      [min]="0"
                      [max]="100"
+                     step="10"
                      [minFractionDigits]="2"
                      [maxFractionDigits]="2"></p-inputNumber>
       <small appErrorMessage

@@ -94,6 +94,6 @@ export class CataloguesHttpService {
   findByType(type: CatalogueTypeEnum): CatalogueModel[] {
     const catalogues: CatalogueModel[] = JSON.parse(String(sessionStorage.getItem('catalogues')));
 
-    return catalogues.filter(catalogue => catalogue.type === type);
+    return catalogues.filter(catalogue => catalogue.type === type && catalogue.isVisible);
   }
 }

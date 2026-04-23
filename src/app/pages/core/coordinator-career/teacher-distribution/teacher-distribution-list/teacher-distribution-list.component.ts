@@ -94,7 +94,7 @@ export class TeacherDistributionListComponent implements OnInit {
       {field: 'teacher', header: 'Docente'},
       {field: 'schoolPeriod', header: 'Periodo Lectivo'},
       {field: 'subject', header: 'Asignatura'},
-      {field: 'workday', header: 'Jornada'}
+      {field: 'workday', header: 'Horario'}
     ];
   }
 

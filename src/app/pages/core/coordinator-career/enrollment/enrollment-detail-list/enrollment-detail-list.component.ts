@@ -119,12 +119,12 @@ export class EnrollmentDetailListComponent implements OnInit {
       {field: 'academicPeriod', header: 'Periodo Académico'},
       {field: 'subject', header: 'Asignaturas'},
       {field: 'number', header: 'Número de Matrícula'},
-      {field: 'workday', header: 'Jornada'},
+      {field: 'workday', header: 'Horario'},
       {field: 'parallel', header: 'Paralelo'},
       {field: 'type', header: 'Tipo de Matrícula'},
       {field: 'enrollmentDetailState', header: 'Estado'},
       {field: 'finalGrade', header: 'Calificación'},
-      {field: 'finalAttendance', header: 'Progreso'},
+      {field: 'finalAttendance', header: 'Asistencia'},
       {field: 'academicState', header: 'Estado Académico'}
 
     ];

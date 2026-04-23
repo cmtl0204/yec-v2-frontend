@@ -388,7 +388,7 @@ export class ApplicationComponent implements OnInit {
     // if (this.academicPeriodField.errors) this.formErrors.push('Nivel Académico');
     if (this.careerField.errors) this.formErrors.push('Carrera');
     if (this.enrollmentDetailsField.errors) this.formErrors.push('Asignaturas');
-    if (this.workdayField.errors) this.formErrors.push('Jornada');
+    if (this.workdayField.errors) this.formErrors.push('Horario');
     if (this.parallelField.errors) this.formErrors.push('Paralelo');
     if (this.schoolPeriodField.errors) this.formErrors.push('Periodo Lectivo');
     // if (this.studentField.errors) this.formErrors.push('Estudiante');

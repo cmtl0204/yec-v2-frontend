@@ -104,7 +104,7 @@ export enum CareerAcademicPeriodsFormEnum {
 
 export enum CareerParallelFormEnum {
   career = 'Carrera',
-  workday = 'Jornada',
+  workday = 'Horario',
   parallel = 'Paralelo',
   capacity = 'Capacidad',
   isVisible = 'Es visible',

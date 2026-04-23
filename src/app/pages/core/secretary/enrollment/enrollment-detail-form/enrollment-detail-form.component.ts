@@ -134,7 +134,7 @@ export class EnrollmentDetailFormComponent implements OnInit, OnExitInterface {
   }
 
   onSubmit(): void {
-    if (this.form.valid) {
+    if (this.validateForm()) {
       if (this.id) {
         this.update(this.form.value);
       } else {
@@ -230,7 +230,7 @@ export class EnrollmentDetailFormComponent implements OnInit, OnExitInterface {
     this.formErrors = [];
     if (this.dateField.errors) this.formErrors.push('Fecha');
     if (this.typeField.errors) this.formErrors.push('Tipo');
-    if (this.workdayField.errors) this.formErrors.push(' Jornada');
+    if (this.workdayField.errors) this.formErrors.push(' Horario');
     if (this.parallelField.errors) this.formErrors.push('Paralelo');
     if (this.observationField.errors) this.formErrors.push('Observación');
     if (this.numberField.errors) this.formErrors.push('Número');

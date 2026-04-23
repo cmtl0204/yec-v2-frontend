@@ -138,7 +138,7 @@ export class InscriptionDetailListComponent implements OnInit {
     return [
       {field: 'subject', header: 'Asignaturas'},
       {field: 'number', header: 'Número de Matrícula'},
-      {field: 'workday', header: 'Jornada'},
+      {field: 'workday', header: 'Horario'},
       {field: 'parallel', header: 'Paralelo'},
       {field: 'type', header: 'Tipo de Matrícula'},
       {field: 'enrollmentDetailState', header: 'Estado'},

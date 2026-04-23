@@ -6,4 +6,5 @@ export interface CatalogueModel {
   required: boolean;
   sort: number;
   type: string;
+  isVisible: boolean;
 }
