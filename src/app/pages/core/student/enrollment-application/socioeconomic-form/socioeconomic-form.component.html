@@ -38,43 +38,6 @@
     <p-accordionTab [disabled]="activeIndex!==1">
       <ng-template pTemplate="header">
         <div class="flex align-items-center">
-          <span class="vertical-align-middle">B.- Datos Académicos del Estudiante</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-      <ng-template pTemplate="content">
-        <app-academic-data
-          *ngIf="student"
-          [student]="student"
-          [id]="student.id"
-          [enrollment]="enrollment"
-          (next)="next()"
-          (previous)="previous()"
-        ></app-academic-data>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==2">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
-          <span class="vertical-align-middle">C.- Otros Datos Académicos del Estudiante</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-
-      <ng-template pTemplate="content">
-        <app-other-academic-data
-          *ngIf="student"
-          [student]="student"
-          [id]="student.id"
-          [enrollment]="enrollment"
-          (next)="next()"
-          (previous)="previous()"
-        ></app-other-academic-data>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==3">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
           <span class="vertical-align-middle">D.- Lugar de Procedencia</span>
           <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
         </div>
@@ -91,7 +54,7 @@
         </app-origin-place>
       </ng-template>
     </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==4">
+    <p-accordionTab [disabled]="activeIndex!==2">
       <ng-template pTemplate="header">
         <div class="flex align-items-center">
           <span class="vertical-align-middle">E.- Lugar de Residencia</span>
@@ -105,120 +68,9 @@
           [student]="student"
           [id]="student.id"
           [enrollment]="enrollment"
-          (next)="next()"
+          (next)="nextOut.emit(1)"
           (previous)="previous()"
         ></app-residence-place>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==5">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
-          <span class="vertical-align-middle">F.- Datos del Grupo Familiar</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-
-      <ng-template pTemplate="content">
-        <app-family-group
-          *ngIf="student"
-          [student]="student"
-          [id]="student.id"
-          [enrollment]="enrollment"
-          (next)="next()"
-          (previous)="previous()"
-        ></app-family-group>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==6">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
-          <span class="vertical-align-middle">G.- Otros Datos Económicos Familiares</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-
-      <ng-template pTemplate="content">
-        <app-family-economic
-          *ngIf="student"
-          [student]="student"
-          [id]="student.id"
-          [enrollment]="enrollment"
-          (next)="next()"
-          (previous)="previous()"
-        ></app-family-economic>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==7">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
-          <span class="vertical-align-middle">H.- Antecedentes de Salud de la Familia</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-
-      <ng-template pTemplate="content">
-        <app-family-health
-          *ngIf="student"
-          [student]="student"
-          [id]="student.id"
-          [enrollment]="enrollment"
-          (next)="next()"
-          (previous)="previous()"
-        ></app-family-health>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==8">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
-          <span class="vertical-align-middle">I.- Datos de la Vivienda del Estudiante</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-
-      <ng-template pTemplate="content">
-        <app-housing-data
-          *ngIf="student"
-          [student]="student"
-          [id]="student.id"
-          [enrollment]="enrollment"
-          (next)="next()"
-          (previous)="previous()"
-        ></app-housing-data>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==9">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
-          <span class="vertical-align-middle">J.- Migración de País</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-
-      <ng-template pTemplate="content">
-        <app-migration-country
-          *ngIf="student"
-          [student]="student"
-          [id]="student.id"
-          [enrollment]="enrollment"
-          (next)="next()"
-          (previous)="previous()"
-        ></app-migration-country>
-      </ng-template>
-    </p-accordionTab>
-    <p-accordionTab [disabled]="activeIndex!==10">
-      <ng-template pTemplate="header">
-        <div class="flex align-items-center">
-          <span class="vertical-align-middle">K.- Sección Psicosocial</span>
-          <i *ngIf="registered" [ngClass]="[PrimeIcons.CHECK_CIRCLE,'ml-2']" style="color: green"></i>
-        </div>
-      </ng-template>
-
-      <ng-template pTemplate="content">
-        <app-psychosocial-section *ngIf="student"
-                                  [student]="student"
-                                  [id]="student.id"
-                                  [enrollment]="enrollment"
-                                  (next)="nextOut.emit(1)"></app-psychosocial-section>
       </ng-template>
     </p-accordionTab>
   </p-accordion>

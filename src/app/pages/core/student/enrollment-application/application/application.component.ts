@@ -2,30 +2,38 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {
   CareersHttpService,
-  CareersService, CataloguesHttpService,
+  CareersService,
+  CataloguesHttpService,
   CoreService,
   CurriculumsHttpService,
   CurriculumsService,
   EnrollmentsHttpService,
-  MessageService, SchoolPeriodsService, StudentsHttpService, SubjectsService
+  MessageService,
+  SchoolPeriodsService,
+  StudentsHttpService,
+  SubjectsService
 } from "@services/core";
 import {MenuItem, PrimeIcons} from 'primeng/api';
 import {
-  ColumnModel,
-  SubjectModel,
-  CurriculumModel,
   CareerModel,
-  StudentModel,
+  CareerParallelModel,
   CatalogueModel,
+  ColumnModel,
+  CurriculumModel,
+  EnrollmentDetailModel,
   EnrollmentModel,
-  SchoolPeriodModel, CareerParallelModel, EnrollmentDetailModel
+  SchoolPeriodModel,
+  StudentModel,
+  SubjectModel
 } from '@models/core';
 import {
+  CatalogueEnrollmentStateEnum,
+  CatalogueTypeEnum,
+  ClassButtonActionEnum,
+  IconButtonActionEnum,
   IdButtonActionEnum,
   LabelButtonActionEnum,
-  IconButtonActionEnum,
-  ClassButtonActionEnum,
-  CatalogueTypeEnum, CatalogueEnrollmentStateEnum, EnrollmentSateEnum, SeverityButtonActionEnum
+  SeverityButtonActionEnum
 } from "@utils/enums";
 import {AuthService} from "@services/auth";
 
@@ -347,7 +355,7 @@ export class ApplicationComponent implements OnInit {
     this.careersHttpService.findParallelsByCareer(this.careerField.value.id)
       .subscribe(careerParallels => {
         this.findLastEnrollmentDetailByStudent();
-
+        console.log(careerParallels);
         this.careerParallels = careerParallels;
       });
   }
