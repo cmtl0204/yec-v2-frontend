@@ -40,10 +40,26 @@ export class TeacherComponent {
         img: `${assetsPath}/teacher-distribution.png`,
         routerLink: '/core/teacher/teacher-distributions',
       },
+      {
+        code: 'eva',
+        enabled: this.state,
+        header: 'EVA',
+        subheader: 'EVA',
+        img: `${assetsPath}/schedule.png`,
+        routerLink: 'https://yec-eva.yavirac.edu.ec',
+      },
     );
   }
 
   redirect(menu: any) {
-    this.router.navigate([menu.routerLink]);
+    if (menu.code === 'eva') {
+      const downloadLink = document.createElement('a');
+      downloadLink.href = menu.routerLink;
+      downloadLink.target = '_blank';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+    } else {
+      this.router.navigate([menu.routerLink]);
+    }
   }
 }
