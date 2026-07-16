@@ -121,51 +121,18 @@ export class StudentComponent {
         routerLink: '/core/student/enrollment-subjects',
       },
       {
-        code: 'schedule',
+        code: 'eva',
         enabled: this.state,
-        header: 'Horario de clases',
-        subheader: 'Descargar',
+        header: 'EVA',
+        subheader: 'EVA',
         img: `${assetsPath}/schedule.png`,
-        routerLink: this.scheduleLinks.find(scheduleLink => scheduleLink.code === this.careersService.career.code)?.link,
-      },
-      {
-        code: 'studentCard',
-        enabled: this.state,
-        header: 'Carnet Estudiantil',
-        subheader: 'Descargar',
-        img: `${assetsPath}/student-card.png`,
-        routerLink: '/core/student/student-card',
-      },
-      {
-        code: 'socioEconomicPdf',
-        enabled: this.state,
-        header: 'PDF Ficha Socioeconómica',
-        subheader: 'Descargar',
-        img: `${assetsPath}/socioeconomic-pdf.png`,
-        routerLink: '/core/student/socioeconomic-pdf',
-      },
-      {
-        code: 'teacherEvaluation',
-        enabled: true,
-        header: 'Evaluación Docente',
-        subheader: 'Ingresar',
-        img: `${assetsPath}/teacher-evaluation.png`,
-        routerLink: '/core/student/teacher-evaluations',
+        routerLink: 'https://yec-eva.yavirac.edu.ec',
       },
     );
-
-    this.transactionMenus.push({
-      code: 'socioEconomicForm',
-      enabled: true,
-      header: 'Ficha Socioeconómica',
-      subheader: 'Descargar',
-      img: `${assetsPath}/socioeconomic-form.png`,
-      routerLink: '/core/student/socioeconomic',
-    });
   }
 
   redirect(menu: any) {
-    if (menu.code === 'schedule') {
+    if (menu.code === 'eva') {
       const downloadLink = document.createElement('a');
       downloadLink.href = menu.routerLink;
       downloadLink.target = '_blank';
