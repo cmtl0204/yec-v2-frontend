@@ -1,8 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from "@angular/forms";
 import {ActivatedRoute, Router} from '@angular/router';
-import { MenuItem, PrimeIcons } from "primeng/api";
-import { ColumnModel, InstitutionModel, PaginatorModel, SelectEnrollmentDto, EnrollmentModel, SubjectModel, CareerModel, CatalogueModel, SchoolPeriodModel, SelectEnrollmentDetailDto, EnrollmentDetailModel } from '@models/core';
+import {MenuItem, PrimeIcons} from "primeng/api";
+import {
+  ColumnModel,
+  InstitutionModel,
+  PaginatorModel,
+  SelectEnrollmentDto,
+  EnrollmentModel,
+  SubjectModel,
+  CareerModel,
+  CatalogueModel,
+  SchoolPeriodModel,
+  SelectEnrollmentDetailDto,
+  EnrollmentDetailModel
+} from '@models/core';
 import {
   BreadcrumbService,
   CareersHttpService,
@@ -23,12 +35,11 @@ import {
   LabelButtonActionEnum,
   SeverityButtonActionEnum, RolesEnum
 } from "@utils/enums";
-import { EnrollmentDetailsHttpService } from '@services/core/enrollment-details-http.service';
+import {EnrollmentDetailsHttpService} from '@services/core/enrollment-details-http.service';
 
 @Component({
   selector: 'app-enrollment-detail-list',
   templateUrl: './enrollment-detail-list.component.html',
-  styleUrls: ['./enrollment-detail-list.component.scss']
 })
 export class EnrollmentDetailListComponent implements OnInit {
   protected readonly PrimeIcons = PrimeIcons;
@@ -66,11 +77,10 @@ export class EnrollmentDetailListComponent implements OnInit {
     private careersService: CareersService,
     private careersHttpService: CareersHttpService,
     private enrollmentDetailsHttpService: EnrollmentDetailsHttpService,
-
   ) {
     this.breadcrumbService.setItems([
-      { label: BreadcrumbEnum.ENROLLMENTS, routerLink: [this.routesService.enrollments(RolesEnum.COORDINATOR_CAREER)] },
-      {label: BreadcrumbEnum.ENROLLMENT_DETAILS },
+      {label: BreadcrumbEnum.ENROLLMENTS, routerLink: [this.routesService.enrollments(RolesEnum.COORDINATOR_CAREER)]},
+      {label: BreadcrumbEnum.ENROLLMENT_DETAILS},
     ]);
 
     this.enrollmentId = activatedRoute.snapshot.params['enrollmentId'];
@@ -97,11 +107,11 @@ export class EnrollmentDetailListComponent implements OnInit {
     )
   }
 
-  findCareers(){
+  findCareers() {
     this.careers = this.careersService.careers;
   }
 
-  findAcademicPeriods(){
+  findAcademicPeriods() {
     this.academicPeriods = this.cataloguesHttpService.findByType(CatalogueTypeEnum.ACADEMIC_PERIOD);
   }
 
@@ -231,5 +241,5 @@ export class EnrollmentDetailListComponent implements OnInit {
     this.router.navigate([this.routesService.enrollmentsDetailForm(this.enrollmentId), id]);
   }
 
-    protected readonly SeverityButtonActionEnum = SeverityButtonActionEnum;
+  protected readonly SeverityButtonActionEnum = SeverityButtonActionEnum;
 }

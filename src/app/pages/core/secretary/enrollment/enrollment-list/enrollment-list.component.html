@@ -129,6 +129,9 @@
           <div *ngSwitchCase="'career'">
             {{ rowData[col.field].name }}
           </div>
+          <div *ngSwitchCase="'schoolPeriod'">
+            {{ rowData[col.field].shortName }}
+          </div>
           <div *ngSwitchCase="'academicPeriod'">
             {{ rowData[col.field].name }}
           </div>

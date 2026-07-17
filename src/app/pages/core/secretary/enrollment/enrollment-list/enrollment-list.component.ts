@@ -8,7 +8,7 @@ import {
   EnrollmentModel,
   CareerModel,
   CatalogueModel,
-  SchoolPeriodModel
+  SchoolPeriodModel, StudentModel
 } from '@models/core';
 import {
   BreadcrumbService,
@@ -36,8 +36,7 @@ import {AuthService} from "@services/auth";
 
 @Component({
   selector: 'app-enrollment-list',
-  templateUrl: './enrollment-list.component.html',
-  styleUrls: ['./enrollment-list.component.scss'],
+  templateUrl: './enrollment-list.component.html'
 })
 export class EnrollmentListComponent implements OnInit {
   protected readonly PrimeIcons = PrimeIcons;
@@ -174,7 +173,8 @@ export class EnrollmentListComponent implements OnInit {
   /** Build Data **/
   get buildColumns(): ColumnModel[] {
     return [
-      {field: 'career', header: 'Carrera'},
+      // {field: 'career', header: 'Carrera'},
+      {field: 'schoolPeriod', header: 'Periodo Lectivo'},
       {field: 'identification', header: 'Número de Documento'},
       {field: 'lastname', header: 'Apellidos'},
       {field: 'name', header: 'Nombres'},
@@ -236,6 +236,14 @@ export class EnrollmentListComponent implements OnInit {
         },
       },
       {
+        id: IdButtonActionEnum.ENROLLED,
+        label: 'Descargar Record Académico',
+        icon: PrimeIcons.DOWNLOAD,
+        command: () => {
+          if (this.selectedItem?.id) this.  downloadEnrollmentAcademicRecord(this.selectedItem.student);
+        },
+      },
+      {
         id: IdButtonActionEnum.REVOKED,
         label: 'Anular Matrícula',
         icon: IconButtonActionEnum.REVOKED,
@@ -270,14 +278,6 @@ export class EnrollmentListComponent implements OnInit {
         icon: IconButtonActionEnum.DOWNLOADS,
         command: () => {
           this.downloadEnrollmentDetailsBySchoolPeriod();
-        },
-      },
-      {
-        id: IdButtonActionEnum.DOWNLOADS,
-        label: 'Descargar Fichas Socioeconómicas por Periodo Lectivo',
-        icon: IconButtonActionEnum.DOWNLOADS,
-        command: () => {
-          this.downloadSocioeconomicFormsBySchoolPeriod();
         },
       },
     ];
@@ -361,6 +361,11 @@ export class EnrollmentListComponent implements OnInit {
     } else {
       this.messageService.errorCustom('No se puede descargar', 'El estudiante no se encuentra matriculado');
     }
+  }
+
+  downloadEnrollmentAcademicRecord(student: StudentModel) {
+    this.enrollmentsHttpService.downloadEnrollmentAcademicRecord(student);
+
   }
 
   downloadEnrollmentsByCareer(career: CareerModel) {

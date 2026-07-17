@@ -3,11 +3,11 @@ import {FormControl} from "@angular/forms";
 import {Router} from '@angular/router';
 import {MenuItem, PrimeIcons} from "primeng/api";
 import {
-  ColumnModel,
-  PaginatorModel,
-  EnrollmentModel,
   CareerModel,
   CatalogueModel,
+  ColumnModel,
+  EnrollmentModel,
+  PaginatorModel,
   SchoolPeriodModel
 } from '@models/core';
 import {
@@ -20,16 +20,19 @@ import {
   MessageService,
   RoutesService,
   SchoolPeriodsHttpService,
-  SchoolPeriodsService, StudentsHttpService, StudentsService
+  SchoolPeriodsService,
+  StudentsHttpService
 } from '@services/core';
 import {
-  IdButtonActionEnum,
   BreadcrumbEnum,
+  CatalogueEnrollmentStateEnum,
   CatalogueTypeEnum,
   ClassButtonActionEnum,
   IconButtonActionEnum,
+  IdButtonActionEnum,
   LabelButtonActionEnum,
-  CatalogueEnrollmentStateEnum, SeverityButtonActionEnum, RolesEnum
+  RolesEnum,
+  SeverityButtonActionEnum
 } from "@utils/enums";
 import {debounceTime} from "rxjs";
 import {AuthService} from "@services/auth";
@@ -37,7 +40,6 @@ import {AuthService} from "@services/auth";
 @Component({
   selector: 'app-enrollment-list',
   templateUrl: './enrollment-list.component.html',
-  styleUrls: ['./enrollment-list.component.scss'],
 })
 export class EnrollmentListComponent implements OnInit {
   protected readonly PrimeIcons = PrimeIcons;

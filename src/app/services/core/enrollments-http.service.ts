@@ -10,7 +10,7 @@ import {
   CreateEnrollmentDto,
   EnrollmentModel,
   UpdateEnrollmentDto,
-  SelectEnrollmentDto, EnrollmentDetailModel, FileModel, CareerModel, SchoolPeriodModel
+  SelectEnrollmentDto, EnrollmentDetailModel, FileModel, CareerModel, SchoolPeriodModel, StudentModel
 } from '@models/core';
 import {ServerResponse} from '@models/http-response';
 import {CoreService, MessageService} from "@services/core";
@@ -253,6 +253,23 @@ export class EnrollmentsHttpService {
         const downloadLink = document.createElement('a');
         downloadLink.href = filePath;
         const fileName = 'Certificado_Matricula_' + identification;
+        downloadLink.setAttribute('download', fileName + '.pdf');
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        this.coreService.isProcessing = false;
+      });
+  }
+
+  downloadEnrollmentAcademicRecord(student:StudentModel) {
+    const url = `${environment.API_URL}/enrollment-reports/academic-records/${student.id}`;
+    this.coreService.isProcessing = true;
+    this.httpClient.get<BlobPart>(url, {responseType: 'blob' as 'json'})
+      .subscribe(response => {
+        // const filePath = URL.createObjectURL(new Blob(binaryData, {type: file.extension}));
+        const filePath = URL.createObjectURL(new Blob([response]));
+        const downloadLink = document.createElement('a');
+        downloadLink.href = filePath;
+        const fileName = 'Record_Academico_' + student.user.identification;
         downloadLink.setAttribute('download', fileName + '.pdf');
         document.body.appendChild(downloadLink);
         downloadLink.click();
